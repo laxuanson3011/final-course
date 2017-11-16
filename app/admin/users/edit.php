@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tao moi user</title>
+    <title>chinh sua user</title>
     <link rel="stylesheet" type="text/css" href="../../../public/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../../public/css/custom.css">
   </head>
