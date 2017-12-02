@@ -2,45 +2,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Danh sach nguoi dung</title>
+  <title>Danh sach payments</title>
    <link rel="stylesheet" type="text/css" href="../../../public/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../../public/css/custom.css">
 </head>
 <body>
-  <?php include "../../menuadmin.php";?>
   <div class="container">
-  <h2>Danh sach nguoi dung</h2>
+  <h2>Danh sach thanh toán</h2>
   <table class="table">
     <thead>
       <tr>
+        <th>thông tin</th>
         <th>Name</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th>edit</th>
+        <th>delete</th>
       </tr>
     </thead>
     <tbody>
     <?php
-      $sql = "select * from users";
+      $sql = "select * from payments";
       $result = $conn->query($sql);
       if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) { ?>
         <tr>
+          <td><?php echo $row['info']; ?></td>
           <td><?php echo $row['name']; ?></td>
-          <td><?php echo $row['email']; ?></td>
-          <td><?php switch ($row['role']) {
-            case 0:
-              echo "Admin";
-              break;
-            case 1:
-              echo "Editor";
-              break;
-            case 2:
-              echo "User";
-              break;
-          }; ?>            
-          </td>
           <td><a href="edit.php?id=<?php echo $row["id"];?>">Edit</a></td>
           <td><a href="delete.php?id=<?php echo $row["id"];?>">Delete</a></td>
         </tr>
@@ -50,8 +36,5 @@
     </tbody>
   </table>
 </div>
-<script src="../../../public/js/jquery.min.js"></script>
-<script src="../../../public/js/bootstrap.min.js"></script>
-<script src="../../../public/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

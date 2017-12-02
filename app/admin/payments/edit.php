@@ -7,15 +7,15 @@
   }
 
   $id = $_GET["id"];
-  $sql = "select * from catalogs where id='$id'";
+  $sql = "select * from payments where id='$id'";
   $result = $conn->query($sql);
   if ($result->num_rows == 0) {
-    $_SESSION["flash"] = "catalog not found with id";
+    $_SESSION["flash"] = "payment not found with id";
     header("location:  index.php");
   }
   $row = $result->fetch_assoc();
-  $name = $row["name"];
-  $description = $row["description"];
+  $name = $row["info"];
+  $description = $row["name"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +25,6 @@
     <link rel="stylesheet" type="text/css" href="../../../public/css/custom.css">
   </head>
   <body>
-  <?php include "../../menuadmin.php";?>
   <div class="wrapper">
     <form method="post" action="update.php">
       <input type="hidden" value="<?php echo $id; ?>" name="id">
@@ -33,26 +32,23 @@
         <i class="flash"><?php if(isset($_SESSION["flash"])) echo $_SESSION["flash"]; ?></i>
       </div>
       <div>
-        <h1>CHINH SUA DANH MUC</h1>
+        <h1>CHINH SUA thanh toan</h1>
       </div>
       <div class="row">
-        <label>Ten danh muc:</label>
-        <input class="form-control" type="text" name="name" value="<?php echo $name; ?>">
+        <label>thông tin:</label>
+        <input class="form-control" type="text" name="info" value="<?php echo $info; ?>">
       </div>
       <div class="row">
-        <label>Description : </label>
+        <label>name : </label>
       </div>
       <div class="row">
-        <textarea class="form-control" type="text" name="description" style="border: 1px solid black"></textarea>
+        <textarea class="form-control" type="text" name="name" style="border: 1px solid black"></textarea>
       </div>
       <div class="row">
         <button class="btn btn-primary">submit</button>
       </div>
     </form>
   </div>
-  <script src="../../../public/js/jquery.min.js"></script>
-<script src="../../../public/js/bootstrap.min.js"></script>
-<script src="../../../public/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
 <?php unset($_SESSION["flash"]); ?>

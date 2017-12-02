@@ -4,10 +4,12 @@
 <head>
   <title>Danh sach danh muc</title>
    <link rel="stylesheet" type="text/css" href="../../../public/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/custom.css>
+    <link rel="stylesheet" type="text/css" href="../../../public/css/custom.css">
 </head>
 <body>
+<?php include "../../menuadmin.php";?>
   <div class="container">
+
   <h2>Danh sach catalogs</h2>
   <table class="table">
     <thead>
@@ -36,5 +38,8 @@
     </tbody>
   </table>
 </div>
+<script src="../../../public/js/jquery.min.js"></script>
+<script src="../../../public/js/bootstrap.min.js"></script>
+<script src="../../../public/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

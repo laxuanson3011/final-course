@@ -1,12 +1,12 @@
 <?php session_start(); ?>
 <?php require_once "../../../db/mysql.php"; ?>
-<?php require_once "../../helper/catalog-helper.php"; ?>
+<?php require_once "../../helper/payment-helper.php"; ?>
 <?php
-  if(isset($_POST["name"]) && isset($_POST["description"])){
+  if(isset($_POST["info"]) && isset($_POST["name"])){
     $id = $_POST["id"];
+    $info = $_POST["info"];
     $name = $_POST["name"];
-    $description = $_POST["description"];
-    $sql = "update users set name='$name',description ='$description' where id=$id";
+    $sql = "update users set info='$info',name ='$name' where id=$id";
     $result = $conn->query($sql);
     if($result){
       $_SESSION["flash"] = "Updated success";

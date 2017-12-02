@@ -2,12 +2,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tao moi catalogs</title>
+    <title>Tao moi payments</title>
     <link rel="stylesheet" type="text/css" href="../../../public/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../../public/css/custom.css">
   </head>
   <body>
-    <?php include "../../menuadmin.php";?>
   <div class="wrapper">
     <form method="post" action="create.php">
       <div class="row">
@@ -16,15 +15,15 @@
         </i>
       </div>
       <div>
-        <h1>TAO MOI CATALOGS</h1>
+        <h1>TAO MOI THANH TOAN</h1>
       </div>
       <div class="row">
-        <label>Ten Danh Muc:</label>
-        <input class="form-control" type="text" name="name">
+        <label>thông tin :</label>
+        <input class="form-control" type="text" name="info">
       </div>
       <div class="row">
-        <label>Description : </label>
-        <textarea class="form-control" name="description"></textarea> 
+        <label>name : </label>
+        <textarea class="form-control" name="name"></textarea> 
       </div>
       <br>
       <div class="row">
@@ -32,9 +31,6 @@
       </div>
     </form>
   </div>
-  <script src="../../../public/js/jquery.min.js"></script>
-<script src="../../../public/js/bootstrap.min.js"></script>
-<script src="../../../public/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
 <?php unset($_SESSION["flash"]); ?>
